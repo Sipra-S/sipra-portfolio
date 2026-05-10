@@ -1239,6 +1239,7 @@ function showSection(id, btn) {
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('main-nav').classList.remove('open');
 }
 
 /* ── Research sub-tabs ── */
@@ -1282,15 +1283,10 @@ function handleFormSubmit() {
   setTimeout(() => { btn.textContent = 'Transmit Message →'; btn.style.borderColor=''; btn.style.color=''; }, 3000);
 }
 
-  function toggleMenu() {
+function toggleMenu() {
   document.getElementById('main-nav').classList.toggle('open');
 }
-// close menu after selecting a section
-const origShow = showSection;
-function showSection(id, btn) {
-  origShow(id, btn);
-  document.getElementById('main-nav').classList.remove('open');
-}
+  
 </script>
 </body>
 </html>
